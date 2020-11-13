@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.23.0" timestamp="2020-09-20T17:14:06.362">
+<file name="/mnt/c/Users/charl/Desktop/M1/Génie Logiciel/TP/GildedRose/src/main/java/com/gildedrose/GildedRose.java">
+<violation beginline="4" endline="4" begincolumn="12" endcolumn="16" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" variable="items" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="20" endline="20" begincolumn="40" endcolumn="41" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="24" endline="24" begincolumn="47" endcolumn="48" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="25" endline="25" begincolumn="52" endcolumn="53" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="30" endline="30" begincolumn="47" endcolumn="47" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="31" endline="31" begincolumn="52" endcolumn="53" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="55" endline="55" begincolumn="44" endcolumn="45" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+</file>
+<file name="/mnt/c/Users/charl/Desktop/M1/Génie Logiciel/TP/GildedRose/src/main/java/com/gildedrose/Item.java">
+<violation beginline="5" endline="5" begincolumn="19" endcolumn="22" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="7" endline="7" begincolumn="16" endcolumn="21" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="sellIn" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="9" endline="9" begincolumn="16" endcolumn="22" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="quality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+</pmd>
