@@ -33,21 +33,21 @@
 
     <!-- Miscellaneous other checks.                   -->
     <!-- See http://checkstyle.sf.net/config_misc.html -->
-    <module name="RegexpSingleline">
+    <!-- <module name="RegexpSingleline">
        <property name="format" value="\s+$"/>
        <property name="minimum" value="0"/>
        <property name="maximum" value="0"/>
        <property name="message" value="Line has trailing spaces."/>
-    </module>
+    </module> -->
 
 
     <!-- See http://checkstyle.sf.net/config_sizes.html -->
     <module name="LineLength">
-        <property name="max" value="120"/>
+        <property name="max" value="150"/>
     </module>
 
     <module name="TreeWalker">
-        <property name="tabWidth" value="2"/>
+        <property name="tabWidth" value="4"/>
 
         <!-- Annotations -->
         <!-- http://checkstyle.sourceforge.net/config_annotation.html -->
@@ -105,7 +105,7 @@
 
 
         <!-- Checks for whitespace                               -->
-        <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+        <!-- See http://checkstyle.sf.net/config_whitespace.html 
         <module name="EmptyForIteratorPad"/>
         <module name="GenericWhitespace"/>
         <module name="MethodParamPad"/>
@@ -115,7 +115,7 @@
         <module name="ParenPad"/>
         <module name="TypecastParenPad"/>
         <module name="WhitespaceAfter"/>
-        <module name="WhitespaceAround"/>
+        <module name="WhitespaceAround"/> -->
 
 
         <!-- Modifier Checks                                    -->
@@ -224,11 +224,11 @@
         <module name="UpperEll"/>
         <module name="ArrayTypeStyle"/>
         <module name="Indentation">
-            <property name="basicOffset" value="2"/>
-            <property name="caseIndent" value="2"/>
-            <property name="throwsIndent" value="2"/>
-            <property name="arrayInitIndent" value="2"/>
-            <property name="lineWrappingIndentation" value="2"/>
+            <property name="basicOffset" value="4"/>
+            <property name="caseIndent" value="4"/>
+            <property name="throwsIndent" value="4"/>
+            <property name="arrayInitIndent" value="4"/>
+            <property name="lineWrappingIndentation" value="4"/>
         </module>
         <module name="TrailingComment"/>
         <module name="OuterTypeFilename"/>

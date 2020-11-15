@@ -6,15 +6,16 @@ import static org.hamcrest.Matchers.*;
 
 class GildedRoseTest {
 
-   
+		private static final String dex = "+5 Dexterity Vest";
+		private static final String brie = "Aged Brie";
 
-    @Test
+		/* Test d'insertion commun a tout les items */
+		@Test
     void testInsert() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 10, 20)};
+    	Item[] items = new Item[] {new Item(dex, 10, 20)};
     	GildedRose app = new GildedRose(items);
-
     	// On test si le nom du produit qu'on a ajouter est bien le meme qu'indiqué : "+5 Dexterity Vest"
-        assertThat(app.items[0].name, is("+5 Dexterity Vest"));
+        assertThat(app.items[0].name, is(dex));
 
 		// On test si le nombre de jour avant peremption du produit qu'on a ajouter est bien le meme qu'indiqué : 10
         assertThat(app.items[0].sellIn, is(10));
@@ -23,10 +24,11 @@ class GildedRoseTest {
         assertThat(app.items[0].quality, is(20));
 	}
 
+	/* Test d'affichage commun a tout les items */
 	@Test
     void testtoString() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 10, 20)};
-    	GildedRose app = new GildedRose(items);
+    	final Item[] items = new Item[] {new Item(dex, 10, 20)};
+    	final GildedRose app = new GildedRose(items);
 
     	// On test si le nom du produit qu'on a ajouter est bien le meme qu'indiqué : "+5 Dexterity Vest"
          assertThat(app.items[0].toString(), is("+5 Dexterity Vest, 10, 20"));
@@ -36,8 +38,8 @@ class GildedRoseTest {
 
 	@Test
     void testDegrade1() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 10, 20)};
-    	GildedRose app = new GildedRose(items);
+    final	Item[] items = new Item[] {new Item(dex, 10, 20)};
+    final	GildedRose app = new GildedRose(items);
 
     	app.updateQuality();
 
@@ -50,8 +52,8 @@ class GildedRoseTest {
 
 	@Test
     void testDegrade2() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 0, 20)};
-    	GildedRose app = new GildedRose(items);
+    final	Item[]  items = new Item[] {new Item(dex, 0, 20)};
+    final	GildedRose app = new GildedRose(items);
 
     	app.updateQuality();
 
@@ -61,8 +63,8 @@ class GildedRoseTest {
 
 	@Test
     void testAgedBrie() {
-    	Item[] items = new Item[] {new Item("Aged Brie", 10, 0)};
-    	GildedRose app = new GildedRose(items);
+    final	Item[] items = new Item[] {new Item(brie, 10, 0)};
+    final	GildedRose app = new GildedRose(items);
 
     	app.updateQuality();
 
@@ -75,8 +77,8 @@ class GildedRoseTest {
 
 	@Test
     void testAgedBrieNeg() {
-    	Item[] items = new Item[] {new Item("Aged Brie", -1, 20)};
-    	GildedRose app = new GildedRose(items);
+    final	Item[] items = new Item[] {new Item(brie, -1, 20)};
+    	final GildedRose app = new GildedRose(items);
 
     	app.updateQuality();
 
@@ -87,8 +89,8 @@ class GildedRoseTest {
 
 	@Test
     void testNegativeQuality() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 1, 0)};
-    	GildedRose app = new GildedRose(items);
+    final	Item[] items = new Item[] {new Item(dex, 1, 0)};
+    final	GildedRose app = new GildedRose(items);
 
     	app.updateQuality();
 
@@ -98,8 +100,8 @@ class GildedRoseTest {
 
 	@Test
     void testNegativeSellInQuality() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 0, 0)};
-    	GildedRose app = new GildedRose(items);
+    final	Item[] items = new Item[] {new Item(dex, 0, 0)};
+    final	GildedRose app = new GildedRose(items);
 
     	app.updateQuality();
 
@@ -109,11 +111,11 @@ class GildedRoseTest {
 
 	@Test
     void testQualityLimit() {
-    	Item[] items = new Item[] {new Item("+5 Dexterity Vest", 1, 51),
-    							   new Item("Aged Brie", 0 , 50)
+    final	Item[] items = new Item[] {new Item(dex, 1, 51),
+    							   new Item(brie, 0 , 50)
     							};
 
-    	GildedRose app = new GildedRose(items);
+    	final GildedRose app = new GildedRose(items);
 
     	// On test si la qualité d'un produit peut être plus de 50 à l'insertion
     	//assertThat(app.items[0].quality, is(51));
@@ -128,9 +130,9 @@ class GildedRoseTest {
 
 	@Test
     void testSulfurasQuality() {
-    	Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", 0, 80)};
+    final	Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", 0, 80)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -141,9 +143,9 @@ class GildedRoseTest {
 
 	@Test
     void testSulfurasQualityNeg() {
-    	Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -1, 80)};
+    final Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -1, 80)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -154,9 +156,9 @@ class GildedRoseTest {
 
 	@Test
 	void testBackstageQuality1() {
-    	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 50, 20)};
+    final	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 50, 20)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -170,9 +172,9 @@ class GildedRoseTest {
 
     @Test
     void testBackstageQuality150() {
-        Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 20, 50)};
+       final Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 20, 50)};
 
-        GildedRose app = new GildedRose(items);
+       final GildedRose app = new GildedRose(items);
 
 
         app.updateQuality();
@@ -183,9 +185,9 @@ class GildedRoseTest {
 
 	@Test
 	void testBackstageQuality2() {
-    	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 9, 20)};
+    final	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 9, 20)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -196,9 +198,9 @@ class GildedRoseTest {
 
 	@Test
 	void testBackstageQuality250() {
-    	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 9, 49)};
+    final	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 9, 49)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -209,9 +211,9 @@ class GildedRoseTest {
 
 	@Test
 	void testBackstageQuality350() {
-    	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 4, 48)};
+    final	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 4, 48)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -222,9 +224,9 @@ class GildedRoseTest {
 
 	@Test
 	void testBackstagePassedQuality() {
-    	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20)};
+    final	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
@@ -235,18 +237,62 @@ class GildedRoseTest {
 
 	@Test
 	void testConjureQuality() {
-    	Item[] items = new Item[] {new Item("Conjured Mana Cake", 3, 6)};
+    final	Item[] items = new Item[] {new Item("Conjured Mana Cake", 3, 6)};
 
-    	GildedRose app = new GildedRose(items);
+    final	GildedRose app = new GildedRose(items);
 
 
     	app.updateQuality();
 
 		
 		// On test si la qualité se degrade bien deux fois plus qu'un produit normal pour l'item conjured
-        // assertThat(app.items[0].quality, is(4));
+    assertThat(app.items[0].quality, is(4));
 
-        //PROBLEME
+	}
+
+	@Test
+	void testConjureQualityNegativeQuality() {
+    final	Item[] items = new Item[] {new Item("Conjured Mana Cake", 1, -1)};
+
+    final	GildedRose app = new GildedRose(items);
+
+
+    	app.updateQuality();
+
+		
+		// On test si la qualité se degrade bien deux fois plus qu'un produit normal pour l'item conjured
+    assertThat(app.items[0].quality, is(-1));
+
+	}
+
+	@Test
+	void testConjureQualityNegativeSellIn() {
+    final	Item[] items = new Item[] {new Item("Conjured Mana Cake", -1, 6)};
+
+    final	GildedRose app = new GildedRose(items);
+
+
+    	app.updateQuality();
+
+		
+		// On test si la qualité se degrade bien deux fois plus qu'un produit normal pour l'item conjured
+    assertThat(app.items[0].quality, is(2));
+
+	}
+
+	@Test
+	void testConjureQualityNegQualitySellIn() {
+    final	Item[] items = new Item[] {new Item("Conjured Mana Cake", -1, -1)};
+
+    final	GildedRose app = new GildedRose(items);
+
+
+    	app.updateQuality();
+
+		
+		// On test si la qualité se degrade bien deux fois plus qu'un produit normal pour l'item conjured
+    assertThat(app.items[0].quality, is(-1));
+
 	}
 
 	

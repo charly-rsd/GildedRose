@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BackstageItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gilded-rose-kata</a> &gt; <a href="index.source.html" class="el_package">com.gildedrose</a> &gt; <span class="el_source">BackstageItem.java</span></div><h1>BackstageItem.java</h1><pre class="source lang-java linenums">package com.gildedrose;
+
+
+<span class="fc" id="L4">public class BackstageItem extends GeneralItem {</span>
+
+	/*
+      Surcharge de la méthode de mise à jour de la qualité au bout d'une journée propre à l'Item BackStage
+  */
+	@Override
+    public void updateQuality(Item item) {
+
+<span class="fc bfc" id="L12" title="All 2 branches covered.">    if (isUnderMaxQuality(item))</span>
+		{
+<span class="fc" id="L14">      incrementQuality(item);</span>
+	  }
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">	  if ( item.sellIn &lt; 11 ) </span>
+		{
+<span class="fc bfc" id="L19" title="All 2 branches covered.">		  if ( isUnderMaxQuality(item) )</span>
+	  	{
+<span class="fc" id="L21">	        incrementQuality(item);</span>
+	    }
+    }
+
+
+<span class="fc bfc" id="L26" title="All 2 branches covered.">	  if ( item.sellIn &lt; 6 )</span>
+		{
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if ( isUnderMaxQuality(item)) </span>
+        {
+<span class="fc" id="L30">	         	incrementQuality(item);</span>
+	      }
+	  }
+
+
+<span class="fc" id="L35">		decrementSellIn(item);</span>
+
+
+<span class="fc bfc" id="L38" title="All 2 branches covered.">			if ( isSellInNegative(item) )</span>
+			{
+<span class="fc" id="L40">				item.quality = item.quality - item.quality;</span>
+			}	
+<span class="fc" id="L42">    }	</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
